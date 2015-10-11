@@ -33,8 +33,11 @@ for(int col = 1; col < (input -> width) - 1; col = col + 1) {
 			output -> color[plane][row][col] = output -> color[plane][row][col] / filter -> getDivisor();
 
 			if ( output -> color[plane][row][col]  < 0 ) {
-				output -> color[plane][row][col] = 0; }
-			if ( output -> color[plane][row][col]  > 255 ) { output -> color[plane][row][col] = 255; }
+				output -> color[plane][row][col] = 0;
+			}
+			if ( output -> color[plane][row][col]  > 255 ) {
+				output -> color[plane][row][col] = 255;
+			}
 			output -> color[plane][row][col] = output -> color[plane][row][col];
 		}
 	}
