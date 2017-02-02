@@ -184,7 +184,9 @@ applyFilter(struct Filter *filter, cs1300bmp *input, cs1300bmp *output)
   #endif
 
   double diff = cycStop-cycStart;
+  #if defined(__arm__)
   diff = diff * 64;
+  #endif
   double diffPerPixel = diff / (output -> width * output -> height);
   fprintf(stderr, "Took %f cycles to process, or %f cycles per pixel\n",
 	  diff, diff / (output -> width * output -> height));
